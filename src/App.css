@@ -2,3 +2,16 @@
   width: 100% !important;
   height: 50vh !important;
 }
+
+h1 {
+  overflow: hidden;
+}
+.main h1:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5%;
+  height: 4px;
+  left: 50%;
+  background-color: #ff3c78;
+}
