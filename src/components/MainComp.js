@@ -4,7 +4,7 @@ import {Row, Col, Button } from 'react-bootstrap'
 function MainComp() {
     return (
         
-        <Row className="main d-flex justify-content-center">
+        <Row className="main d-flex justify-content-center align-items-center">
         <Col md={4} className="  text-center ">
     
     <h1 className="font-weight-bold text-center mb-3">Welcome to Caliche</h1>
