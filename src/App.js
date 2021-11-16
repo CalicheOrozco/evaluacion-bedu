@@ -3,15 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container, Row, Col } from 'react-bootstrap'
 import NavbarComp from './components/NavbarComp';
 import MainComp from './components/MainComp';
+import Bookmark from './components/Bookmark';
 
 function App() {
   return (
     <div className="App">
-      <Container fluid>
+      <Container >
   <Row>
     <Col >
     <NavbarComp />
-    <MainComp />
+    <Bookmark />
     
     
     </Col>

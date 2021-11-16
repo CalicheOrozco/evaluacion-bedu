@@ -3,15 +3,33 @@
   height: 50vh !important;
 }
 
+.bookmarks {
+  width: 100% !important;
+}
+
 h1 {
   overflow: hidden;
 }
 .main h1:after {
   content: "";
+  margin-top: 10px;
   position: absolute;
   display: block;
   width: 5%;
   height: 4px;
-  left: 50%;
-  background-color: #ff3c78;
+  left: 45%;
+  background-color: #5079eb;
+}
+
+h3 {
+  overflow: hidden;
+}
+.bookmarks h3:after {
+  margin-top: 10px;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4%;
+  height: 4px;
+  background-color: #5079eb;
 }
