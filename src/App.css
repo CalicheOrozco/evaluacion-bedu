@@ -33,3 +33,8 @@ h3 {
   height: 4px;
   background-color: #5079eb;
 }
+
+.icon-link:hover,
+.icon-delate:hover {
+  cursor: pointer;
+}

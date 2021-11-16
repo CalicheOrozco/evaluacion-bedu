@@ -4,6 +4,7 @@ import {Container, Row, Col } from 'react-bootstrap'
 import NavbarComp from './components/NavbarComp';
 import MainComp from './components/MainComp';
 import Bookmark from './components/Bookmark';
+import Cards from './components/Card';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <Col >
     <NavbarComp />
     <Bookmark />
+    <Cards />
     
     
     </Col>
