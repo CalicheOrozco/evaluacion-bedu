@@ -38,8 +38,10 @@ const submitImg = (event) => {
       
       setValidation(true)
       
+      
   } else {
       setValidation(false)
+      console.log(validation)
       
 
   }
