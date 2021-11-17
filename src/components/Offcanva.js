@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
+
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
 import './OffCanva.css';
 import { IconContext } from 'react-icons';
 import {Button, Form, Image} from 'react-bootstrap'
+
 
 function Offcanva(props) {
   const [sidebar, setSidebar] = useState(false);
@@ -37,8 +37,10 @@ const submitImg = (event) => {
       props.putImg(inputImgMeta)
       
       setValidation(true)
+      
   } else {
       setValidation(false)
+      
 
   }
   
@@ -48,13 +50,17 @@ const submitBookmark = (event) => {
   event.preventDefault()
   if (inputTextMetaTitle.trim() !=="" && inputTextMetaDescription.trim() !==""  ){
       setSidebar(false)
+      const infoCard = inputImgMeta +"|"+ inputTextMetaTitle + "|"+ inputTextMetaDescription
+      props.newBookmark(infoCard)
       
-      console.log(inputImgMeta)
-      console.log(inputTextMetaTitle)
-      console.log(inputTextMetaDescription)  
+      
       setValidation(true)
+      
   } else {
       setValidation(false)
+      
+      
+      alert('Es necesario que llenes todos los campos')
 
   }
   
@@ -71,7 +77,7 @@ const submitBookmark = (event) => {
             
           </Link>
         </div>
-        <nav className={sidebar ? 'offcanva-menu active' : 'offcanva-menu '}>
+        <nav className={sidebar ? 'offcanva-menu active ' : 'offcanva-menu '}>
           <ul className='offcanva-menu-items' >
             <li className='offcanva-toggle bg-primary'>
               <Link to='#' className='menu-bars'>

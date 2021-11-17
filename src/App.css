@@ -38,3 +38,8 @@ h3 {
 .icon-delate:hover {
   cursor: pointer;
 }
+
+.cardscontainer {
+  position: relative;
+  z-index: 1;
+}

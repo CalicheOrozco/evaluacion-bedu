@@ -1,29 +1,36 @@
 import React from 'react'
-import {Row, Col, Card } from 'react-bootstrap'
+import { Col, Card } from 'react-bootstrap'
 import { Trash, Link45deg } from 'react-bootstrap-icons';
 
-function Cards() {
+function Cards(props) {
+    
+    const test = String(props.bookmark)
+    const split = test.split('|') 
+    
+    const delateBookmark = () => {
+        props.delate(props.id)
+    }
+    
     return (
-        <Row>
-        <Col md={4} className="cards pt-5 ">
+        
+        <Col md={3} className="cards pt-3 pb-3 ">
         
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://assets.bedu.org/images/developer-image.jpeg?fit=min&w=328" />
+        <Card.Img variant="top" src={split[0]} />
         <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{split[1]}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">https://bedu.org</Card.Subtitle> 
             <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+            {split[2]}
             </Card.Text>
             <div className="d-flex justify-content-end" >
             <Link45deg className="icon-link me-1" size={22} />
-            <Trash className="icon-delate" color="red" size={22} />
+            <Trash className="icon-delate" color="red" size={22} onClick={delateBookmark} />
             </div>
         </Card.Body>
         </Card>
         </Col>
-        </Row>
+        
     )
 }
 
