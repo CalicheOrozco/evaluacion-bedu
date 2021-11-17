@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Col, Button, Card } from 'react-bootstrap'
+import {Row, Col, Card } from 'react-bootstrap'
 import { Trash, Link45deg } from 'react-bootstrap-icons';
 
 function Cards() {

@@ -17,7 +17,7 @@ function NavbarComp() {
         src="/profile.jpg"
         width="30"
         height="30"
-        className="d-none d-lg-block d-inline-block align-top rounded-circle"
+        className="d-sm-none d-lg-block d-inline-block align-top rounded-circle"
         alt="React Bootstrap logo"
       />
         <NavDropdown active="true" title="Caliche Orozco" id="basic-nav-dropdown">

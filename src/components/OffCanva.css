@@ -1,0 +1,97 @@
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+
+@media (min-width: 576px) {
+  .offcanva-menu {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .offcanva-menu {
+    width: 30%;
+  }
+}
+
+.offcanva-menu {
+  background-color: #fff;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: 850ms;
+}
+
+.offcanva-menu.active {
+  right: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.title-toggle {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  left: 50px;
+  top: 15px;
+  position: absolute;
+}
+.title-toggle:hover {
+  color: #fff;
+  cursor: default;
+}
+
+.offcanvas-description {
+  width: 90%;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #060b26;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.offcanva-menu-items {
+  width: 100%;
+}
+
+.offcanva-toggle {
+  background-color: #5079eb;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.offcanvas-description img {
+  background-color: #f2f2f2;
+  height: 180px;
+}
+
+#formMetaTitle,
+#metaDescription {
+  background-color: #f2f2f2;
+}
+span {
+  margin-left: 16px;
+}
