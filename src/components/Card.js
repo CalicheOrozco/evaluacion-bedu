@@ -13,7 +13,7 @@ function Cards(props) {
     
     return (
         
-        <Col md={3} className="cards pt-3 pb-3 ">
+        <Col sm={12} md={6} lg={4} xxl={3} className="cards pt-3 pb-3 ">
         
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={split[0]} />

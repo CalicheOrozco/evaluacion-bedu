@@ -83,7 +83,7 @@ const submitBookmark = (event) => {
           <ul className='offcanva-menu-items' >
             <li className='offcanva-toggle bg-primary'>
               <Link to='#' className='menu-bars'>
-                <a className='title-toggle'>Create a new bookmark</a>
+                <span className='title-toggle'>Create a new bookmark</span>
                 <AiIcons.AiOutlineClose size={'20px'} className='me-3' onClick={showSidebar} />
               </Link>
             </li>
@@ -95,7 +95,7 @@ const submitBookmark = (event) => {
               <Form.Control type="text" placeholder="https://company.com" value={inputImgMeta} onChange={controlImgMeta} />
               <Button variant="primary" className="mt-2 w-100" onClick={submitImg} >Load metadata</Button>  
             </Form.Group>
-            <a class="nav-link disabled text-center" href="#" tabindex="-1" aria-disabled="true">—— Preview ——</a>
+            <span class="nav-link disabled text-center" href="#" tabindex="-1" aria-disabled="true">—— Preview ——</span>
             <Image src={props.imgUrl} className="w-100" rounded />
             <Form.Group className="mb-3 " controlId="formMetaTitle">
               <Form.Label>Meta Title</Form.Label>
