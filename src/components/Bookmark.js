@@ -1,7 +1,7 @@
 import React from 'react'
 import {Row, Col } from 'react-bootstrap'
 
-
+// El Bookmark espera un children (el offcanva)
 function Bookmark({children}) {
     return (
         <Row>

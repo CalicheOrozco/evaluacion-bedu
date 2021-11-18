@@ -1,6 +1,7 @@
 import React from 'react'
 import {Row, Col } from 'react-bootstrap'
 
+// El componente espera un children (el offcanva)
 function MainComp({children}) {
     return (
         

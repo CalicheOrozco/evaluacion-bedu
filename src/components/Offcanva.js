@@ -12,68 +12,77 @@ function Offcanva(props) {
   const [inputImgMeta, setInputImgMeta] = useState("")
   const [inputTextMetaTitle, setInputTextMetaTitle] = useState("")
   const [inputTextMetaDescription, setInputTextMetaDescription] = useState("")
-    const [validation, setValidation] = useState(true)
+  const [validation, setValidation] = useState(true)
 
     
-
+    // Funcion que controla los datos del form ImgControlImg
     const controlImgMeta = (event) =>{
+      // actualiza el estado cada vez que se actualiza el input
       setInputImgMeta(event.target.value)
-      
   }
-
+    // Funcion que controla los datos del form del title
     const controlFormMetaTitle = (event) =>{
-      setInputTextMetaTitle(event.target.value)
-        
+      // actualiza el estado cada vez que se actualiza el input
+      setInputTextMetaTitle(event.target.value)     
   }
-
+  // Funcion que controla los datos del form del description
   const controlFormMetaDescription = (event) =>{
+    // Funcion que controla los datos del form del title
     setInputTextMetaDescription(event.target.value)
     
 }
 
+// Funcion que  guarda en el estado el link de la imagen
 const submitImg = (event) => {
   event.preventDefault()
+  // Si el campo no esta vacio
   if (inputImgMeta.trim() !==""){
+    // Ejecuta la funcion putImg que se paso como prop
       props.putImg(inputImgMeta)
-      
+      // Se pasa  la validación a true
       setValidation(true)
-      
-      
   } else {
+      // Si no se pasa la validacion a falso
       setValidation(false)
-      console.log(validation)
-      
-
+      // Se envia una alerta informando el error
+      alert('Es necesario colocar el link de una imagen')
+      console.log(validation) 
   }
   
 }
-
+// Función que guarda todo el bookmark
 const submitBookmark = (event) => {
   event.preventDefault()
+  // Si ningun campo esta vacio
   if (inputTextMetaTitle.trim() !=="" && inputTextMetaDescription.trim() !==""  ){
+    // Se cierrael offcanvas
       setSidebar(false)
+      // Se guarda toda la información en una variable y se separa los datos con un "|"
       const infoCard = inputImgMeta +"|"+ inputTextMetaTitle + "|"+ inputTextMetaDescription
+      // Se ejecuta la funcion newbookmark para guardar los datos obtenidos
       props.newBookmark(infoCard)
-      
-      
+      // Se cambia la validación a true
       setValidation(true)
       
   } else {
+    // De lo contrario se coloca la validación en false
       setValidation(false)
-      
-      
+      // Se envia una alerta con el error
       alert('Es necesario que llenes todos los campos')
 
   }
   
 }
-
+  // Función que muestra/quita el offcanva
   const showSidebar = () => 
-  setSidebar(!sidebar)
+  // Se coloca el estado al contrario del que se encuentre
+  setSidebar(!sidebar) 
+  // Se ejecuta la funcion que informa del estado del offcanvas
   props.offcanvasInfo(sidebar)
 
   return (
     <>
+      {/* se coloca el icono y el color del icono */}
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='offcanva'>
           <Link to='#' className='menu-bars'>
@@ -81,6 +90,7 @@ const submitBookmark = (event) => {
             
           </Link>
         </div>
+        {/* Si el estado del offcanvas es true se añade la clase active de lo contrario se elimina */}
         <nav className={sidebar ? 'offcanva-menu active ' : 'offcanva-menu '}>
           <ul className='offcanva-menu-items' >
             <li className='offcanva-toggle bg-primary'>
