@@ -12,19 +12,27 @@ import Cards from './components/Card';
 
 function App() {
 
-
+  // Estado que verifica si offcavas esta activado
+  const [offcanvasActivate, setoffcanvasActivate] = useState(false)
+  // Estado que verifica si existen bookmark
   const [validationBookmark, setValidationBookmark] = useState(false)
-
+  // Estado que guarda la lisa de bookmarks
   const [listBookmark, setlistBookmark] = useState([])
-
+  // Funcion que guarda la información que ira en las cards
   const newBookmark = (infoCard) => {
-    
-    
-    
-    console.log(listBookmark.length)
+    // Se agrega la información obtenina en el parametro a la lista de bookmarks
     setlistBookmark([infoCard, ...listBookmark])
-    console.log(listBookmark)
+    // Se cambia el estado del validador de bookmark a verdadero
     setValidationBookmark(true)
+    
+  }
+
+  // Funcion que guarda si el offcanvas esta abierto
+  const offcanvasInfo = (state) => {
+    
+    // Se cambia el estado del verificador del offcanvas
+    setoffcanvasActivate(state)
+    
     
   }
 
@@ -40,6 +48,8 @@ function App() {
     setimgUrl([url])
 
   }
+  const stateOffCanvas = offcanvasActivate
+  console.log(stateOffCanvas)
   return (
     <div className="App">
       <Container >
@@ -47,15 +57,15 @@ function App() {
     <Col >
     
     <NavbarComp />
-    {!validationBookmark ? <MainComp><Router><Offcanva putImg={putImg} imgUrl={imgUrl} newBookmark={newBookmark} /></Router></MainComp>
-    : <Bookmark><Router><Offcanva putImg={putImg} imgUrl={imgUrl} newBookmark={newBookmark} /></Router></Bookmark>}
+    {!validationBookmark ? <MainComp><Router><Offcanva putImg={putImg} imgUrl={imgUrl} newBookmark={newBookmark} offcanvasInfo={offcanvasInfo} /></Router></MainComp>
+    : <Bookmark><Router><Offcanva putImg={putImg} imgUrl={imgUrl} newBookmark={newBookmark} offcanvasInfo={offcanvasInfo} /></Router></Bookmark>}
     
     
 
       <div className="row  cardscontainer" >{
         listBookmark.map((e, index) =>
         
-        <Cards bookmark={e} id={index} delate={delate} />
+        <Cards bookmark={e} id={index} delate={delate} offcanvasIs={stateOffCanvas} />
         )
       }</div>
    

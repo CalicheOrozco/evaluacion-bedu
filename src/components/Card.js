@@ -10,10 +10,13 @@ function Cards(props) {
     const delateBookmark = () => {
         props.delate(props.id)
     }
+
+    console.log(props.offcanvasIs)
     
     return (
+        // 
         
-        <Col sm={12} md={6} lg={4} xxl={3} className="cards pt-3 pb-3 ">
+        <Col sm={12} md={6} lg={4} xxl={3} className={props.offcanvasIs ? 'cards pt-3 pb-3 d-none ' : 'cards pt-3 pb-3'}>
         
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={split[0]} />

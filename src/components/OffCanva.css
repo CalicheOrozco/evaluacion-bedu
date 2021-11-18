@@ -4,13 +4,19 @@
   background: none;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 0px) {
   .offcanva-menu {
     width: 100%;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
+  .offcanva-menu {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
   .offcanva-menu {
     width: 30%;
   }

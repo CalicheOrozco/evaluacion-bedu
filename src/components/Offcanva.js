@@ -68,7 +68,9 @@ const submitBookmark = (event) => {
   
 }
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => 
+  setSidebar(!sidebar)
+  props.offcanvasInfo(sidebar)
 
   return (
     <>
@@ -95,7 +97,7 @@ const submitBookmark = (event) => {
               <Form.Control type="text" placeholder="https://company.com" value={inputImgMeta} onChange={controlImgMeta} />
               <Button variant="primary" className="mt-2 w-100" onClick={submitImg} >Load metadata</Button>  
             </Form.Group>
-            <span class="nav-link disabled text-center" href="#" tabindex="-1" aria-disabled="true">—— Preview ——</span>
+            <span className="nav-link disabled text-center" href="#" tabIndex="-1" aria-disabled="true">—— Preview ——</span>
             <Image src={props.imgUrl} className="w-100" rounded />
             <Form.Group className="mb-3 " controlId="formMetaTitle">
               <Form.Label>Meta Title</Form.Label>
