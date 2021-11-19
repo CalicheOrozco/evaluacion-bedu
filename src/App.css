@@ -35,6 +35,7 @@ h3 {
 }
 
 .icon-link:hover,
+.icon-edit:hover,
 .icon-delate:hover {
   cursor: pointer;
 }
